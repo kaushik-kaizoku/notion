@@ -54,6 +54,7 @@ export const Item = ({
       success: "Note moved to trash!",
       error: "Failed to archive note."
     });
+    router.push("/documents");
   };
   
   const handleExpand =(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -69,7 +70,7 @@ export const Item = ({
         if(!expanded) {
           onExpand?.();
         }
-        // router.push(`/documents/${documentId}`);
+        router.push(`/documents/${documentId}`);
       })
     toast.promise(promise,{
       loading: "Creating new note...",
@@ -79,7 +80,6 @@ export const Item = ({
   };
 
   const ChevronIcon = expanded ? ChevronDown : ChevronRight;
-  
 
   return ( 
     <div 

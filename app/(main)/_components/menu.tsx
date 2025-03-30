@@ -29,7 +29,7 @@ export const Menu = ({ documentId }: MenuProps) => {
   const archive = useMutation(api.documents.archive);
 
   const onArchive = () => {
-    const promise = archive({ id: documentId });
+    const promise = archive({ id: documentId })
 
     toast.promise(promise, {
       loading: "Moving to trash...",
