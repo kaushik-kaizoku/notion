@@ -21,7 +21,7 @@ export const TrashBox = () => {
 
   const [search, setSearch] = useState("");
 
-  const filteredDocuments = documents?.filter((document: any) => document.title.toLowerCase().includes(search.toLowerCase()));
+  const filteredDocuments = documents?.filter((document) => document.title.toLowerCase().includes(search.toLowerCase()));
 
   const onClick = (documentId: string) => {
     router.push(`/documents/${documentId}`);
@@ -80,9 +80,9 @@ export const TrashBox = () => {
         <p className="hidden last:block text-xs text-center text-muted-foreground pb-2">
           No documents found.
         </p>
-        {filteredDocuments?.map((document: any) => ( 
+        {filteredDocuments?.map((document) => ( 
           <div
-            key={document.id}
+            key={document._id}
             role="button"
             onClick={() => onClick(document._id)}
             className="text-sm rounded-sm w-full hover:bg-primary/5 flex items-center text-primary justify-between"

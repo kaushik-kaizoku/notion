@@ -6,7 +6,6 @@ import { SignOutButton, useUser } from "@clerk/nextjs";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import { DropdownMenu,
     DropdownMenuContent,
-    DropdownMenuLabel,
     DropdownMenuItem,
     DropdownMenuTrigger,
     DropdownMenuSeparator,

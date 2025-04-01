@@ -14,7 +14,7 @@ import { api } from "@/convex/_generated/api";
 
 interface ToolbarProps {
   initialData: Doc<"documents">,
-  preview?: Boolean
+  preview?: boolean,
 };
 
 export const Toolbar = ({
