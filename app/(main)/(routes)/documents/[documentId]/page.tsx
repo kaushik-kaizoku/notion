@@ -10,17 +10,18 @@ import { Toolbar } from "@/components/toolbar";
 import { Cover } from "@/components/cover";
 import { Skeleton } from "@/components/ui/skeleton";
 
+const Editor = dynamic(() => import("@/components/editor"), { ssr: false });
+
 interface DocumentIdPageProps {
   params: { 
     documentId: Id<"documents">;
   };
 };
 
-const Editor = dynamic(() => import("@/components/editor"), { ssr: false });
-
-const DocumentIdPage = ({
+export default async function DocumentIdPage ({
   params
-}: Awaited<DocumentIdPageProps> ) => {
+}: DocumentIdPageProps )  {
+  const resolvedParams = await params;
   const document = useQuery(api.documents.getById, {
     documentId: params.documentId
   });
@@ -72,4 +73,3 @@ const DocumentIdPage = ({
    );
 };
  
-export default DocumentIdPage;
