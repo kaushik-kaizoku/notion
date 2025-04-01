@@ -74,7 +74,7 @@ export const Title = ({
           className="font-normal h-auto p-1"
         >
           <span className="truncate">
-          {initialData?.title}
+          {title || "Untitled"}
           </span>
         </Button>
       )} 
