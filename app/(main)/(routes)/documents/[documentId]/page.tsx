@@ -3,6 +3,7 @@
 import { useMutation, useQuery } from "convex/react";
 import dynamic from "next/dynamic";
 
+
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { Toolbar } from "@/components/toolbar";
@@ -10,7 +11,7 @@ import { Cover } from "@/components/cover";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface DocumentIdPageProps {
-  params: {
+  params: { 
     documentId: Id<"documents">;
   };
 };
@@ -19,7 +20,7 @@ const Editor = dynamic(() => import("@/components/editor"), { ssr: false });
 
 const DocumentIdPage = ({
   params
-}: DocumentIdPageProps ) => {
+}: Awaited<DocumentIdPageProps> ) => {
   const document = useQuery(api.documents.getById, {
     documentId: params.documentId
   });
