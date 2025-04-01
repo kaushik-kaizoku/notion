@@ -19,7 +19,7 @@ const Editor = dynamic(() => import("@/components/editor"), { ssr: false });
 
 const DocumentIdPage = ({
   params
-}: DocumentIdPageProps ) => {
+}: Awaited<DocumentIdPageProps> ) => {
   const document = useQuery(api.documents.getById, {
     documentId: params.documentId
   });
