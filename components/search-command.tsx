@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/clerk-react";
 
 import { 
-  Command,
   CommandDialog,
   CommandEmpty,
   CommandGroup,
