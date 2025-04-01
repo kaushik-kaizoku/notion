@@ -20,7 +20,7 @@ export const Title = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const update = useMutation(api.documents.update);
   
-  const [title, setTitle] = useState(initialData.title || "undefined");
+  const [, setTitle] = useState(initialData.title || "undefined");
   const [isEditing, setIsEditing] = useState(false); 
 
   const enableInput = () => {
