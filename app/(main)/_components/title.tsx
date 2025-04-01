@@ -74,7 +74,7 @@ export const Title = ({
           className="font-normal h-auto p-1"
         >
           <span className="truncate">
-          {title !== "undefined" ? "Untitled" : initialData.title}
+          {initialData?.title}
           </span>
         </Button>
       )} 
